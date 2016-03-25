@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="com_num_1" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="1"/>
+        <constructor-arg value="0"/>
+    </bean>
+    <bean id="com_num_2" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="2"/>
+        <constructor-arg value="5"/>
+    </bean>
+    <bean id="com_num_3" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="-5"/>
+        <constructor-arg value="3"/>
+    </bean>
+    <bean id="com_num_4" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="7"/>
+        <constructor-arg value="5"/>
+    </bean>
+    <bean id="com_matrix" class="ComplexMatrix2X2" scope="prototype">
+        <constructor-arg ref="com_num_1"/>
+        <constructor-arg ref="com_num_2"/>
+        <constructor-arg ref="com_num_3"/>
+        <constructor-arg ref="com_num_4"/>
+    </bean>
+
+    <bean id="zero_com_num_1" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="1"/>
+        <constructor-arg value="0"/>
+    </bean>
+    <bean id="zero_com_num_2" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="2"/>
+        <constructor-arg value="0"/>
+    </bean>
+    <bean id="zero_com_matrix" class="ComplexMatrix2X2" scope="prototype">
+        <constructor-arg ref="zero_com_num_1"/>
+        <constructor-arg ref="zero_com_num_2"/>
+        <constructor-arg ref="zero_com_num_1"/>
+        <constructor-arg ref="zero_com_num_2"/>
+    </bean>
+
+    <bean id="default_complex_number" class="ComplexNumber" scope="prototype">
+        <constructor-arg value="0"/>
+        <constructor-arg value="0"/>
+    </bean>
+
+    <bean id="default_matrix_2x2_with_no_arg" class="ComplexMatrix2X2" scope="prototype"/>
+
+    <bean id="default_matrix_2x2_with_1_arg" class="ComplexMatrix2X2" scope="prototype">
+        <constructor-arg ref="default_complex_number"/>
+    </bean>
+    <bean id="default_matrix_2x2_with_4_arg" class="ComplexMatrix2X2" scope="prototype">
+        <constructor-arg ref="default_complex_number"/>
+        <constructor-arg ref="default_complex_number"/>
+        <constructor-arg ref="default_complex_number"/>
+        <constructor-arg ref="default_complex_number"/>
+    </bean>
+
+</beans>

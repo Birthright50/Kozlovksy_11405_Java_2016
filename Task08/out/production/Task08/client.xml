@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="socket" class="java.net.Socket">
+        <constructor-arg value="localhost"/>
+        <constructor-arg value="3456"/>
+    </bean>
+
+    <bean id="ous" class="java.io.ObjectOutputStream">
+        <constructor-arg>
+            <bean factory-bean="socket" factory-method="getOutputStream"/>
+        </constructor-arg>
+
+    </bean>
+    <bean id="ois" class="java.io.ObjectInputStream">
+        <constructor-arg>
+            <bean factory-bean="socket" factory-method="getInputStream"/>
+        </constructor-arg>
+    </bean>
+
+</beans>

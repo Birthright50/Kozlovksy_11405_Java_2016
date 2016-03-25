@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+
+
+    <bean id="server_socket" class="java.net.ServerSocket">
+        <constructor-arg value="3456"/>
+    </bean>
+    <bean id="client_socket" class="java.net.Socket" factory-bean="server_socket"
+          factory-method="accept" scope="prototype"/>
+
+    <bean id="client_room" class="Server.ClientRoomThread" scope="prototype">
+        <constructor-arg ref="client_socket"/>
+    </bean>
+    <bean id="thread" class="java.lang.Thread" scope="prototype">
+        <constructor-arg ref="client_room"/>
+    </bean>
+
+
+</beans>

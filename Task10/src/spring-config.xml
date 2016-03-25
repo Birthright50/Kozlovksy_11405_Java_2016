@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="some_wheel" class="our_classes.SomeWheel">
+        <constructor-arg value="50"/>
+        <constructor-arg value="true"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <bean id="some_transmission" class="our_classes.SomeTransmission">
+        <constructor-arg index="0" value="6"/>
+        <constructor-arg index="1" value="6"/>
+        <constructor-arg index="2" value="true"/>
+    </bean>
+
+    <bean id="some_pedal" class="our_classes.SomePedal">
+
+        <constructor-arg index="0" value="5"/>
+        <constructor-arg index="1" value="true"/>
+    </bean>
+    <bean id="some_man_pedal" class="our_classes.SomeManualPedal">
+        <constructor-arg index="0" value="50"/>
+        <constructor-arg index="1" value="true"/>
+    </bean>
+    <bean id="some_auto_trans" class="our_classes.SomeAutoTransmission">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="6"/>
+        <constructor-arg index="2" value="true"/>
+        <constructor-arg index="3" value="false"/>
+    </bean>
+    <bean id="some_engine" class="our_classes.SomeEngine">
+
+        <constructor-arg index="0" value="343"/>
+        <constructor-arg index="1" value="360"/>
+        <constructor-arg index="2" value="false"/>
+    </bean>
+    <bean id="e46" class="our_classes.BMWM3E46"/>
+</beans>
