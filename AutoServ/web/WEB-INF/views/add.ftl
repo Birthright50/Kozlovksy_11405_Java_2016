@@ -2,7 +2,6 @@
 <@main_template title="Добавить"/>
 <#macro m_body>
 <div class="narrow">
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=22yWC4v0AT8AhFp5IQ2hnrMOcljhEBCc&width=730&height=260&lang=ru_RU&sourceType=constructor&scroll=true"></script>
     <div id="right" style=" margin-left:auto;
     margin-right:auto;
     width:900px; "><!--Правая колонка-->

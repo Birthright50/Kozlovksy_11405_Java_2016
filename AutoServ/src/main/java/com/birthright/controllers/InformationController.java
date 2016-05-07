@@ -1,5 +1,7 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.AdminControl;
+import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.Information;
 import com.birthright.helpers.Constants;
 import com.birthright.service.InformationService;
@@ -30,7 +32,7 @@ public class InformationController {
     private InformationService informationService;
     @Autowired
     ServletContext servletContext;
-
+    @Logging
     @RequestMapping(method = RequestMethod.GET)
     public String getInformation(ModelMap model) {
         model.put("news", informationService.getTop3InformationByTypeOrderByDate(Constants.NEWS_TYPE));
@@ -38,19 +40,21 @@ public class InformationController {
         model.put("spec", informationService.getTop3InformationByTypeOrderByDate(Constants.SPEC_TYPE));
         return "information";
     }
-
+    @Logging
     @RequestMapping(value = "/spec", method = RequestMethod.GET)
     public String getSpecInfo(ModelMap modelMap) {
         modelMap.put("spec", informationService.getInformationByTypeOrderByDate(Constants.SPEC_TYPE));
         return "spec";
     }
-
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String showToAdd() {
-
         return "add";
     }
 
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@RequestParam MultipartFile foto, @RequestParam String preview,
                       @RequestParam String text, @RequestParam Integer radio, @RequestParam String name) {
@@ -62,12 +66,14 @@ public class InformationController {
             return "redirect:/add?error";
         }
     }
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String delete(@PathVariable Long id){
         informationService.deleteInformation(id);
         return "redirect:/information";
     }
-
+    @Logging
     @RequestMapping(value = "/{type}", method = RequestMethod.GET)
     public String getAllInfo(ModelMap modelMap, @PathVariable String type) {
         switch (type) {
@@ -84,7 +90,7 @@ public class InformationController {
         }
         return "type";
     }
-
+    @Logging
     @RequestMapping(value = "/{type}/{id}", method = RequestMethod.GET)
     public String getOneInfo(ModelMap modelMap, @PathVariable String type, @PathVariable Long id) {
         switch (type) {

@@ -1,5 +1,7 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.Logging;
+import com.birthright.aspects.annotation.UserControl;
 import com.birthright.entity.Claim;
 import com.birthright.entity.Orders;
 import com.birthright.entity.OrdersProducts;
@@ -47,6 +49,8 @@ public class PersonalCabinetController {
     @Autowired
     private OrdersService ordersService;
 
+    @UserControl
+    @Logging
     @RequestMapping(value = "/claim", method = RequestMethod.POST)
     public String createClaim(@RequestParam String DESIRE_DATE,
                               @RequestParam String REASON) {
@@ -61,13 +65,15 @@ public class PersonalCabinetController {
             return "redirect:/";
         }
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = RequestMethod.GET, value = "/my-auto")
     public String getClaims(ModelMap modelMap) {
         modelMap.put("claims", claimService.findByUserId(((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo().getId()));
         return "personal_cabinet/my-auto";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = RequestMethod.GET)
     public String showCabinet() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -76,7 +82,8 @@ public class PersonalCabinetController {
         }
         return "personal_cabinet";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(value = "toDelete", method = POST)
     public String toDelete(@RequestParam Long id, HttpSession session) {
         ArrayList list = (ArrayList) session.getAttribute("order");
@@ -90,18 +97,21 @@ public class PersonalCabinetController {
         }
         return "redirect:/personal_cabinet/basket";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(value = "/delete", method = POST)
     public String delete(@RequestParam Long id) {
         claimService.deleteClaimById(id);
         return "redirect:/personal_cabinet/my-auto";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(value = "/configuration", method = RequestMethod.GET)
     public String showConfig() {
         return "personal_cabinet/configuration";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(value = "/configuration", method = POST)
     public String setConfig(@RequestParam String LAST_NAME, @RequestParam String NAME, @RequestParam String SECOND_NAME,
                             @RequestParam String PERSONAL_PHONE, @RequestParam String OLD_PASSWORD, @RequestParam String NEW_PASSWORD, @RequestParam String AUTO) {
@@ -120,14 +130,16 @@ public class PersonalCabinetController {
         userService.saveUser(user);
         return "redirect:/personal_cabinet/configuration?success";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(value = "/orders", method = GET)
     public String getOrders(ModelMap modelMap) {
         List<Orders> ordersList = ordersService.findAllById(((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo().getId());
         modelMap.put("orders", ordersList);
         return "/personal_cabinet/orders";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = GET, value = "/orders/{id}")
     public String getOneOrder(ModelMap modelMap, @PathVariable Long id) {
         Orders orders = ordersService.findOne(id);
@@ -137,7 +149,8 @@ public class PersonalCabinetController {
         }
         return "redirect:/personal_cabinet/orders";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = RequestMethod.GET, value = "/basket")
     public String showBasket(HttpSession session, ModelMap modelMap) {
         ArrayList list = (ArrayList) session.getAttribute("order");
@@ -153,7 +166,8 @@ public class PersonalCabinetController {
         session.setAttribute("sum", sum);
         return "/personal_cabinet/basket";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = POST, value = "/checkout")
     public String makeOrder(HttpSession session, @RequestParam String address, @RequestParam String index, @RequestParam String country, @RequestParam String city) {
         Orders orders = new Orders();
@@ -177,6 +191,8 @@ public class PersonalCabinetController {
 
     }
 
+    @UserControl
+    @Logging
     @RequestMapping(method = GET, value = "/checkout")
     public String checkout(HttpSession session, ModelMap modelMap) {
         if (session.getAttribute("sum") != null) {
@@ -185,7 +201,8 @@ public class PersonalCabinetController {
         }
         return "redirect:/personal_cabinet/basket";
     }
-
+    @UserControl
+    @Logging
     @RequestMapping(method = POST, value = "/edit")
     public String editBasket(HttpSession session, @RequestParam Long id, @RequestParam Integer count) {
         ArrayList list = (ArrayList) session.getAttribute("order");

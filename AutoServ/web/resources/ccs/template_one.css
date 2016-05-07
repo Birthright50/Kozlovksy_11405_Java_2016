@@ -6963,6 +6963,12 @@ table.counter tbody tr td#quantity_control {
     color: #000;
     /*float: left;*/
 }
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
 
 .bx_ordercart .bx_ordercart_order_table_container tbody .right {
     text-align: right !important;

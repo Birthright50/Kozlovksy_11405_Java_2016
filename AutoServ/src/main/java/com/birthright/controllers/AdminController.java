@@ -1,5 +1,7 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.AdminControl;
+import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.Claim;
 import com.birthright.entity.Orders;
 import com.birthright.helpers.Constants;
@@ -29,18 +31,21 @@ public class AdminController {
     @Autowired
     private OrdersService ordersService;
 
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/claims", method = RequestMethod.GET)
     public String getClaims(ModelMap modelMap) {
         modelMap.put("claims", claimService.findAll());
         return "admin/claims";
     }
-
+    @Logging
+    @AdminControl
     @RequestMapping(method = RequestMethod.GET)
     public String getAdmin(ModelMap modelMap) {
-
         return "admin";
     }
-
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/claims", method = RequestMethod.POST)
     public String setClaim(@RequestParam Long id, @RequestParam Integer sum, @RequestParam String comment, @RequestParam String status) {
         Claim claim = claimService.findById(id);
@@ -51,6 +56,8 @@ public class AdminController {
         return "redirect:/admin";
     }
 
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
     public String getOrders(ModelMap modelMap) {
         List<Orders> ordersList = ordersService.findAll();
@@ -58,6 +65,8 @@ public class AdminController {
         return "admin/orders";
     }
 
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/orders", method = RequestMethod.POST)
     public String acceptOrders(@RequestParam Long id) {
         Orders orders = ordersService.findOne(id);
@@ -65,6 +74,8 @@ public class AdminController {
         ordersService.save(orders);
         return "redirect:/admin/orders";
     }
+    @Logging
+    @AdminControl
     @RequestMapping(value = "/orders/{id}", method = RequestMethod.GET)
     public String showOrder(@PathVariable Long id, ModelMap modelMap){
         Orders orders = ordersService.findOne(id);

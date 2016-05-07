@@ -65,8 +65,11 @@
 	</span>
             </@security.authorize>
         </div>
-        <div class="catalog_block">
+        <div class="catalog_block" id="550">
             <table class="deals">
+                <thead>
+
+                </thead>
                 <tbody>
                     <#list model.getProducts() as product>
                     <tr>
@@ -103,4 +106,25 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("table").tablesorter();
+        $("#ajax-append").click(function () {
+            $.get("assets/ajax-content.html", function (html) {
+                // append the "ajax'd" data to the table body
+                $("table tbody").append(html);
+                // let the plugin know that we made a update
+                $("table").trigger("update");
+                // set sorting column and direction, this will sort on the first and third column
+                var sorting = [[2, 1], [0, 0]];
+                // sort on the first column
+                $("table").trigger("sorton", [sorting]);
+            });
+            return false;
+        });
+    });
+</script>
+<script src="/resources/js/jquery-2.2.3.js"></script>
+
+<script type="text/javascript" src="/resources/js/jquery.tablesorter.min.js"></script>
 </#macro>

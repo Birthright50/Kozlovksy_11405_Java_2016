@@ -1,5 +1,6 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.Logging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,7 +23,7 @@ public class LoginController {
     public String success() {
         return "redirect:/";
     }
-
+    @Logging
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

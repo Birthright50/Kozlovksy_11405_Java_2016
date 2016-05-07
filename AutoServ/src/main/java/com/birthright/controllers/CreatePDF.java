@@ -1,5 +1,6 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.AutoBrand;
 import com.birthright.entity.AutoModel;
 import com.itextpdf.text.*;
@@ -22,7 +23,7 @@ public class CreatePDF {
     private static Font TIME_ROMAN = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
     private static Font TIME_ROMAN_SMALL = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
 
-
+    @Logging
     public static Document createPDF(String file, java.util.List<AutoBrand> autoBrandList) {
 
         Document document = null;

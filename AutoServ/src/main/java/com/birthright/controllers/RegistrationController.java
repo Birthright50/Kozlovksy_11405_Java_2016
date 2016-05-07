@@ -1,5 +1,6 @@
 package com.birthright.controllers;
 
+import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.Users;
 import com.birthright.helpers.Response;
 import com.birthright.service.CustomUserDetailsService;
@@ -21,6 +22,7 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
+    @Logging
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -29,7 +31,7 @@ public class RegistrationController {
         }
         return "redirect:/home";
     }
-
+    @Logging
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String newUserRegistration(@RequestParam String email, @RequestParam String password,
                                       @RequestParam String name, @RequestParam String lastname) {
