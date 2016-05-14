@@ -92,7 +92,7 @@
                                         <td class="itemphoto">
                                             <div class="bx_ordercart_photo_container">
 
-                                                <a href="/shop/shiny-13-quot/12728/">
+                                                <a>
                                                     <div class="bx_ordercart_photo"
                                                          style="background-image:url('/resources/images/no-auto.png')"></div>
                                                 </a></div>

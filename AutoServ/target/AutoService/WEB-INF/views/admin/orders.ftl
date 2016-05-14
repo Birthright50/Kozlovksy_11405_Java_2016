@@ -24,7 +24,7 @@
                     <#list orders as order>
                     <tr class="even">
                         <form action="/admin/orders" method="post">
-                            <td align="right"><a href="/admin/orders/${order?counter}">${order?counter}</a></td>
+                            <td align="right"><a href="/admin/orders/${order.getId()}">${order.getId()}</a></td>
                             <td>${order.getUsers().getName()} ${order.getUsers().getLastname()}
                                 (${order.getUsers().getEmail()})
                             </td>
