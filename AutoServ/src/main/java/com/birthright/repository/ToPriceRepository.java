@@ -1,5 +1,6 @@
 package com.birthright.repository;
 
+
 import com.birthright.entity.ToPrice;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;

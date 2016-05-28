@@ -23,7 +23,6 @@
                     authentication-failure-url="/login?error=true"
                     username-parameter="email"
                     password-parameter="password"
-
         />
         <remember-me user-service-ref="userDetailsService"
                      remember-me-cookie="user"

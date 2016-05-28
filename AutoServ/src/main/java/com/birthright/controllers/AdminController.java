@@ -48,7 +48,7 @@ public class AdminController {
     @AdminControl
     @RequestMapping(value = "/claims", method = RequestMethod.POST)
     public String setClaim(@RequestParam Long id, @RequestParam Integer sum, @RequestParam String comment, @RequestParam String status) {
-        Claim claim = claimService.findById(id);
+       Claim claim = claimService.findById(id);
         claim.setSum(sum);
         claim.setResponse(comment);
         claim.setStatus(status);
@@ -69,7 +69,7 @@ public class AdminController {
     @AdminControl
     @RequestMapping(value = "/orders", method = RequestMethod.POST)
     public String acceptOrders(@RequestParam Long id) {
-        Orders orders = ordersService.findOne(id);
+       Orders orders = ordersService.findOne(id);
         orders.setStatus(Constants.YES_CLAIM);
         ordersService.save(orders);
         return "redirect:/admin/orders";

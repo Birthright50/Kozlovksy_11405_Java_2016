@@ -1,5 +1,6 @@
 package com.birthright.service;
 
+
 import com.birthright.entity.AutoModel;
 import com.birthright.repository.AutoModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;

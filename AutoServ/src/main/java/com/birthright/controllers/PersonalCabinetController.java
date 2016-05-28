@@ -1,13 +1,12 @@
 package com.birthright.controllers;
 
+
 import com.birthright.aspects.annotation.Logging;
 import com.birthright.aspects.annotation.UserControl;
-import com.birthright.entity.Claim;
-import com.birthright.entity.Orders;
-import com.birthright.entity.OrdersProducts;
-import com.birthright.entity.Users;
+import com.birthright.entity.*;
 import com.birthright.helpers.Constants;
 import com.birthright.service.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,7 +14,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
@@ -48,7 +50,7 @@ public class PersonalCabinetController {
 
     @UserControl
     @Logging
-    @RequestMapping(value = "/claim", method = RequestMethod.POST)
+    @RequestMapping(value = "/claim", method = POST)
     public String createClaim(@RequestParam String DESIRE_DATE,
                               @RequestParam String REASON) {
         DESIRE_DATE = DESIRE_DATE.replace("T", " ");
@@ -63,9 +65,21 @@ public class PersonalCabinetController {
         }
     }
 
+    @RequestMapping(method = GET, value = "/get_claims")
+    public
+    @ResponseBody
+    ClaimsList getJSONclaims() {
+        List<Claim> list = claimService.findByUserId(((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo().getId());
+        for (Claim claim : list) {
+            claim.setUser(null);
+        }
+        return new ClaimsList(list);
+    }
+
+
     @UserControl
     @Logging
-    @RequestMapping(method = RequestMethod.GET, value = "/my-auto")
+    @RequestMapping(method = GET, value = "/my-auto")
     public String getClaims(ModelMap modelMap) {
         modelMap.put("claims", claimService.findByUserId(((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo().getId()));
         return "personal_cabinet/my-auto";
@@ -73,7 +87,7 @@ public class PersonalCabinetController {
 
     @UserControl
     @Logging
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = GET)
     public String showCabinet() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if ((auth instanceof AnonymousAuthenticationToken)) {
@@ -108,7 +122,7 @@ public class PersonalCabinetController {
 
     @UserControl
     @Logging
-    @RequestMapping(value = "/configuration", method = RequestMethod.GET)
+    @RequestMapping(value = "/configuration", method = GET)
     public String showConfig() {
         return "personal_cabinet/configuration";
     }
@@ -134,6 +148,28 @@ public class PersonalCabinetController {
         return "redirect:/personal_cabinet/configuration?success";
     }
 
+    @RequestMapping(value = "/configuration/set", method = POST)
+    public
+    @ResponseBody
+    Users set(@RequestParam String LAST_NAME, @RequestParam String NAME, @RequestParam String SECOND_NAME,
+              @RequestParam String PERSONAL_PHONE, @RequestParam String OLD_PASSWORD, @RequestParam String NEW_PASSWORD, @RequestParam String AUTO) {
+        Users user = ((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo();
+        if (OLD_PASSWORD.length() != 0) {
+            if (!encoder.matches(OLD_PASSWORD, user.getPassword())) {
+                return null;
+            }
+            user.setPassword(encoder.encode(NEW_PASSWORD));
+        }
+        user.setName(NAME);
+        user.setLastname(LAST_NAME);
+        user.setSecondName(SECOND_NAME);
+        user.setTelephone(PERSONAL_PHONE);
+        user.setAutomobile(AUTO);
+        userService.saveUser(user);
+        System.out.println("success");
+        return user;
+    }
+
     @UserControl
     @Logging
     @RequestMapping(value = "/orders", method = GET)
@@ -157,7 +193,7 @@ public class PersonalCabinetController {
 
     @UserControl
     @Logging
-    @RequestMapping(method = RequestMethod.GET, value = "/basket")
+    @RequestMapping(method = GET, value = "/basket")
     public String showBasket(HttpSession session, ModelMap modelMap) {
         ArrayList list = (ArrayList) session.getAttribute("order");
         modelMap.put("products", list);
@@ -194,9 +230,15 @@ public class PersonalCabinetController {
 
     }
 
-    @RequestMapping(method = GET, value = "/orders/sort")
-    public @ResponseBody List<Orders> sort() {
-        return ordersService.findAllById(((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo().getId());
+    @RequestMapping(value = "/get", method = GET)
+    public
+    @ResponseBody
+    Users get() throws JsonProcessingException {
+        Users users = ((CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUserInfo();
+        users.setClaims(null);
+        users.setOrdersList(null);
+        return users;
+
     }
 
     @UserControl

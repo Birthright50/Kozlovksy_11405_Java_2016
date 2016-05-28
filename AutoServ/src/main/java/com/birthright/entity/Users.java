@@ -9,7 +9,7 @@ import java.util.List;
  */
 @Entity
 public class Users implements Serializable {
-    private static final long serialVersionUID = 1L;
+
     private Long id;
     private String password;
     private String email;
@@ -22,6 +22,7 @@ public class Users implements Serializable {
     private String automobile;
     private List<Claim> claims;
     private List<Orders> ordersList;
+
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "users")
     public List<Orders> getOrdersList() {

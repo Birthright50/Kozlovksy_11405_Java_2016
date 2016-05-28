@@ -4,13 +4,15 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by birthright on 07.05.16.
  */
 @Entity
-public class Products {
+
+public class Products implements Serializable {
     private Long id;
     private String name;
     private String description;

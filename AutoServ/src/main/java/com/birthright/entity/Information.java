@@ -1,13 +1,14 @@
 package com.birthright.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
  * Created by Birthright on 03.05.2016.
  */
 @Entity
-public class Information {
+public class Information implements Serializable {
     private Long id;
     private Integer type;
     private String name;

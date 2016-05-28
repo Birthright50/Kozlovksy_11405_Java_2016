@@ -1,13 +1,18 @@
 package com.birthright.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by Birthright on 05.05.2016.
  */
 @Entity
-public class Claim {
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property = "user_id")
+public class Claim implements Serializable {
     private Long id;
     private Timestamp fDate;
     private String reason;

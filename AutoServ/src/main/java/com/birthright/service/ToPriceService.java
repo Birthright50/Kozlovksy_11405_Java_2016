@@ -1,5 +1,6 @@
 package com.birthright.service;
 
+
 import com.birthright.entity.ToPrice;
 import com.birthright.repository.ToPriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;

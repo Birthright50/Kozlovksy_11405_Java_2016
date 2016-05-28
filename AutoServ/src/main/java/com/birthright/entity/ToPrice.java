@@ -1,13 +1,15 @@
 package com.birthright.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by birthright on 07.05.16.
  */
 @Entity
 @Table(name = "to_price", schema = "public", catalog = "postgres")
-public class ToPrice {
+
+public class ToPrice  implements Serializable {
     private Long id;
     private Integer price;
     private AutoModel autoModel;

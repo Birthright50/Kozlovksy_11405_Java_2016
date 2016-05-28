@@ -1,5 +1,6 @@
 package com.birthright.repository;
 
+
 import com.birthright.entity.AutoBrand;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

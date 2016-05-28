@@ -53,8 +53,8 @@
         </ul>
         <div class="both"></div>
         <h1>Мои заказы</h1>
-        <div id="55" hidden><@security.authentication property="principal.userInfo.id"/></div>
-        <div id="123" class="order_list current-status">
+
+        <div class="order_list current-status">
             <div class="wrap_table">
                 <table class="gray_table">
                     <tbody>
@@ -65,44 +65,29 @@
                         </th>
                         <th class="status">Статус
                         </th>
-                        <th class="sum">Сумма</th>
+                        <th class="sum">Сумма
+                                                   </th>
+                        <!-- <th>Товары<br /></th>
+                        <th>Оплачен<br /><nobr><a href="/personal-cabinet/orders/?by=PAYED&amp;order=asc#nav_start"><img src="/bitrix/images/icons/up.gif" width="15" height="15" border="0" alt="По возрастанию"></a><a href="/personal-cabinet/orders/?by=PAYED&amp;order=desc#nav_start"><img src="/bitrix/images/icons/down.gif" width="15" height="15" border="0" alt="По убыванию"></a></nobr></th>
+                        <th>Отменен<br /><nobr><a href="/personal-cabinet/orders/?by=CANCELED&amp;order=asc#nav_start"><img src="/bitrix/images/icons/up.gif" width="15" height="15" border="0" alt="По возрастанию"></a><a href="/personal-cabinet/orders/?by=CANCELED&amp;order=desc#nav_start"><img src="/bitrix/images/icons/down.gif" width="15" height="15" border="0" alt="По убыванию"></a></nobr></th>
+                        <th>Способ оплаты / доставки<br /></th> -->
                         <th class="action"></th>
                     </tr>
-                        <#list orders as order>
-                        <tr class="even">
-                            <td align="center"><a href="/personal_cabinet/orders/${order.getId()}">${order.getId()}</a>
-                            </td>
-                            <td>${order.getfDate()}</td>
-                            <td>${order.getStatus()}</td>
-                            <td align="right">${order.getSum()}</td>
-                        </tr>
-                        </#list>
+                    <#list orders as order>
+                    <tr class="even">
+                        <td align="center"><a href="/personal_cabinet/orders/${order.getId()}">${order.getId()}</a> </td>
+                        <td>${order.getfDate()}</td>
+                        <td>${order.getStatus()}</td>
+                        <td align="right">${order.getSum()}</td>
+                    </tr>
+                    </#list>
+
                     </tbody>
                 </table>
             </div>
-            <button onclick="sort()">ssss</button>
+
         </div>
+
     </div>
 </div>
-<script type="text/javascript" src="/resources/js/jquery-2.2.3.min.js"></script>
-<script type="text/javascript">
-    function sort() {
-        $.ajax({
-            type: "GET",
-            headers: {
-                'Cache-Control': 'max-age=1000'
-            },
-            url: "/personal_cabinet/orders/sort"
-        }).done(function (data) {
-            if (data != '') {
-                $("#123").append(data);
-
-            } 
-        }).fail(function () {
-          alert("error");
-        });
-
-    }
-
-</script>
 </#macro>

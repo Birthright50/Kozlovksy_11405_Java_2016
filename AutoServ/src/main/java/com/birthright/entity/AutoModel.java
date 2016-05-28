@@ -1,6 +1,7 @@
 package com.birthright.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "auto_model", schema = "public", catalog = "postgres")
-public class AutoModel {
+public class AutoModel implements Serializable {
     private Long id;
     private String name;
     private AutoBrand brand;

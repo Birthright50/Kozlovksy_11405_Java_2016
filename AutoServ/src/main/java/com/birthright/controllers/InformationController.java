@@ -1,18 +1,17 @@
 package com.birthright.controllers;
 
+
 import com.birthright.aspects.annotation.AdminControl;
 import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.Information;
 import com.birthright.helpers.Constants;
+import com.birthright.helpers.ListInfo;
 import com.birthright.service.InformationService;
 import com.google.common.io.Files;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
@@ -32,6 +31,7 @@ public class InformationController {
     private InformationService informationService;
     @Autowired
     ServletContext servletContext;
+
     @Logging
     @RequestMapping(method = RequestMethod.GET)
     public String getInformation(ModelMap model) {
@@ -40,17 +40,27 @@ public class InformationController {
         model.put("spec", informationService.getTop3InformationByTypeOrderByDate(Constants.SPEC_TYPE));
         return "information";
     }
+
     @Logging
     @RequestMapping(value = "/spec", method = RequestMethod.GET)
     public String getSpecInfo(ModelMap modelMap) {
         modelMap.put("spec", informationService.getInformationByTypeOrderByDate(Constants.SPEC_TYPE));
         return "spec";
     }
+
     @Logging
     @AdminControl
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String showToAdd() {
         return "add";
+    }
+
+
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    ListInfo get(@RequestParam int type) {
+        return new ListInfo(informationService.getInformationByTypeOrderByDate(type));
     }
 
     @Logging
@@ -66,13 +76,15 @@ public class InformationController {
             return "redirect:/add?error";
         }
     }
+
     @Logging
     @AdminControl
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable Long id) {
         informationService.deleteInformation(id);
         return "redirect:/information";
     }
+
     @Logging
     @RequestMapping(value = "/{type}", method = RequestMethod.GET)
     public String getAllInfo(ModelMap modelMap, @PathVariable String type) {
@@ -90,6 +102,7 @@ public class InformationController {
         }
         return "type";
     }
+
     @Logging
     @RequestMapping(value = "/{type}/{id}", method = RequestMethod.GET)
     public String getOneInfo(ModelMap modelMap, @PathVariable String type, @PathVariable Long id) {

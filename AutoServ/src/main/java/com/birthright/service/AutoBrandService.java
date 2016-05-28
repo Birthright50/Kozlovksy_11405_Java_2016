@@ -1,5 +1,6 @@
 package com.birthright.service;
 
+
 import com.birthright.entity.AutoBrand;
 import com.birthright.repository.AutoBrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;

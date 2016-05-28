@@ -58,19 +58,24 @@
         <div class="both"></div>
         <h1>${model.getBrand().getName()} ${model.getName()}</h1>
         <div class="selling_block">
-            <@security.authorize access="!hasRole('ROLE_ADMIN')">
+            <@security.authorize access="hasRole('ROLE_USER')">
                 <span class="basket">
 		<a href="/personal_cabinet/basket">Корзина</a><br>
 
 	</span>
+
             </@security.authorize>
         </div>
+        <select onchange="sort()" id="123">
+            <option value="1">По возрастанию</option>
+            <option value="2">По убыванию</option>
+            <option value="3">Сброс</option>
+        </select>
+
         <div class="catalog_block" id="550">
             <table class="deals">
-                <thead>
 
-                </thead>
-                <tbody>
+                <tbody id="55">
                     <#list model.getProducts() as product>
                     <tr>
                         <td class="foto">
@@ -78,7 +83,6 @@
                                 <img src="/resources/images/no-auto.png">
                             </a>
                         </td>
-
                         <td class="description">
                             <p class="name"><a>${product.getName()}</a></p>
                             <p class="annotation">${product.getDescription()}</p>
@@ -107,24 +111,47 @@
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("table").tablesorter();
-        $("#ajax-append").click(function () {
-            $.get("assets/ajax-content.html", function (html) {
-                // append the "ajax'd" data to the table body
-                $("table tbody").append(html);
-                // let the plugin know that we made a update
-                $("table").trigger("update");
-                // set sorting column and direction, this will sort on the first and third column
-                var sorting = [[2, 1], [0, 0]];
-                // sort on the first column
-                $("table").trigger("sorton", [sorting]);
-            });
-            return false;
-        });
-    });
-</script>
-<script src="/resources/js/jquery-2.2.3.js"></script>
+    var s = window.location.pathname + '/sort';
+    function sort() {
+        var text = ($('#123').find('option:selected').val());
+        $.ajax({
 
-<script type="text/javascript" src="/resources/js/jquery.tablesorter.min.js"></script>
+            type: "GET",
+            headers: {
+                'Cache-Control': 'max-age=1000'
+            },
+            data: ({
+                text: text
+            }),
+            contentType: "application/json; charset=utf-8",
+            url: s
+        }).done(function (data) {
+            $('#55').find('tr').remove();
+            for (var i = 0; i < data.length; i++) {
+                var row = '<tr>' +
+                        '<td class="foto"><a><img src="/resources/images/no-auto.png"></a>' +
+                        '<td class="description"><p class="name"><a>' + data[i].name + '</a></p>' +
+                        '<p class="annotation">' + data[i].description + '</p></td>' +
+                        '<td class="detail"><p class="price"><b>' + data[i].price + ' руб</b></p>';
+                <@security.authorize access="hasRole('ROLE_USER')">
+
+                    row += '<form action="/shop/add" method="post"><div class="operation">' +
+                            '<input hidden name="id" type="text" value="' + data[i].id + '"/>' +
+                            '<input hidden type="text" value="' + window.location.pathname + '" name="url"/>' +
+                            '<input type="SUBMIT" class="button_red_smaller link_detail" rel="nofollow" value="В корзину"/></div></form>';
+                </@security.authorize>
+                row += '</td></tr>';
+
+                $('#55').append(row);
+            }
+        }).fail(function () {
+            alert("fail");
+        });
+    }
+
+
+</script>
+<script src="/resources/js/jquery-2.2.3.min.js"></script>
+
+
 </#macro>

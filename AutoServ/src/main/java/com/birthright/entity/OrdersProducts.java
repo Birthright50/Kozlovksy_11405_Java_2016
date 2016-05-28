@@ -1,13 +1,15 @@
 package com.birthright.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by birthright on 13.05.16.
  */
 @Entity
 @Table(name = "orders_products", schema = "public", catalog = "postgres")
-public class OrdersProducts {
+
+public class OrdersProducts implements Serializable {
     private Long ordersId;
     private Long productsId;
     private Integer count;

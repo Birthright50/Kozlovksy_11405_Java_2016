@@ -1,5 +1,6 @@
 package com.birthright.controllers;
 
+
 import com.birthright.aspects.annotation.Logging;
 import com.birthright.entity.Users;
 import com.birthright.helpers.Response;
@@ -38,6 +39,7 @@ public class RegistrationController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String newUserRegistration(@RequestParam String email, @RequestParam String password,
                                       @RequestParam String name, @RequestParam String lastname) {
+
         Users user = new Users(password, email, true, name, lastname, "ROLE_USER");
         userService.saveUser(user);
         return "redirect:/";
@@ -47,7 +49,8 @@ public class RegistrationController {
     public
     @ResponseBody
     Response check(@RequestParam String email) {
-        Response response = new Response();
+
+        com.birthright.helpers.Response response = new Response();
         if (customUserDetailsService.loadUserByUsername(email) == null) {
             response.setText("ok");
         }

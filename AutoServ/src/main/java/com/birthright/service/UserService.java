@@ -1,5 +1,6 @@
 package com.birthright.service;
 
+
 import com.birthright.entity.Users;
 import com.birthright.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,11 @@ public class UserService {
     @Autowired
     private UsersRepository usersRepository;
 
-    public void saveUser(Users user) {
-        user.setPassword(encoder.encode(user.getPassword()));
-        usersRepository.save(user);
+    public Users saveUser(Users user) {
+
+        return usersRepository.save(user);
+    }
+    public Users get(Long id){
+        return usersRepository.findOne(id);
     }
 }

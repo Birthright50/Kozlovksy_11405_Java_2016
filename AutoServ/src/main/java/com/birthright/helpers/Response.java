@@ -6,6 +6,14 @@ package com.birthright.helpers;
 public class Response {
     private String text;
 
+    public Response() {
+    }
+
+    public Response(String text) {
+
+        this.text = text;
+    }
+
     public String getText() {
         return text;
     }

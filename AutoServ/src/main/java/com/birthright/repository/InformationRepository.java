@@ -1,5 +1,6 @@
 package com.birthright.repository;
 
+
 import com.birthright.entity.Information;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.PagingAndSortingRepository;
