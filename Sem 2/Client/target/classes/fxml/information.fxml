@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="information" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="789.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InformationController">
+    <children>
+        <TitledPane fx:id="titlePane" animated="true" contentDisplay="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="464.0" prefWidth="780.0" text="" textAlignment="CENTER" textOverrun="CLIP">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TextArea fx:id="textArea" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="413.0" prefWidth="751.0" style=" -fx-background-color: rgba(255, 255, 255, 0.0)" wrapText="true" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+    </children>
+</AnchorPane>

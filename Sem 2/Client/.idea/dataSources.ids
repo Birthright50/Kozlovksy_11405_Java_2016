@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - postgres@localhost" uuid="c48459a1-f6e8-4b94-9c29-4c684f28b38e">
+    <database-info product="PostgreSQL" version="9.5.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
+      <database id="1" name="postgres"/>
+      <database id="2" name="semestry_app"/>
+      <schema id="3" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>817</introspection-state-number>
+        <introspection-timestamp>2016-05-27.12:35:35.698</introspection-timestamp>
+      </schema>
+      <schema id="4" parent="2" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>854</introspection-state-number>
+        <introspection-timestamp>2016-05-27.12:37:09.126</introspection-timestamp>
+      </schema>
+      <sequence id="5" parent="3" name="auto_brand_id_seq">
+        <object-id>16390</object-id>
+        <state-number>668</state-number>
+      </sequence>
+      <sequence id="6" parent="3" name="auto_model_id_seq">
+        <object-id>16398</object-id>
+        <state-number>671</state-number>
+      </sequence>
+      <sequence id="7" parent="3" name="claim_id_seq">
+        <object-id>16406</object-id>
+        <state-number>674</state-number>
+      </sequence>
+      <sequence id="8" parent="3" name="hibernate_sequence">
+        <object-id>16408</object-id>
+        <state-number>676</state-number>
+      </sequence>
+      <sequence id="9" parent="3" name="information_id_seq">
+        <object-id>16416</object-id>
+        <state-number>678</state-number>
+      </sequence>
+      <sequence id="10" parent="3" name="orders_id_seq">
+        <object-id>16497</object-id>
+        <state-number>735</state-number>
+      </sequence>
+      <sequence id="11" parent="3" name="orders_products_id_seq">
+        <object-id>16528</object-id>
+        <state-number>814</state-number>
+      </sequence>
+      <sequence id="12" parent="3" name="products_id_seq">
+        <object-id>16480</object-id>
+        <state-number>732</state-number>
+      </sequence>
+      <sequence id="13" parent="3" name="to_price_id_seq">
+        <object-id>16462</object-id>
+        <state-number>719</state-number>
+      </sequence>
+      <sequence id="14" parent="3" name="users_id_seq">
+        <object-id>16424</object-id>
+        <state-number>681</state-number>
+      </sequence>
+      <table id="15" parent="3" name="auto_brand">
+        <object-id>16384</object-id>
+        <state-number>702</state-number>
+      </table>
+      <table id="16" parent="3" name="auto_model">
+        <object-id>16392</object-id>
+        <state-number>732</state-number>
+      </table>
+      <table id="17" parent="3" name="claim">
+        <object-id>16400</object-id>
+        <state-number>707</state-number>
+      </table>
+      <table id="18" parent="3" name="information">
+        <object-id>16410</object-id>
+        <state-number>677</state-number>
+      </table>
+      <table id="19" parent="3" name="orders">
+        <object-id>16499</object-id>
+        <state-number>736</state-number>
+      </table>
+      <table id="20" parent="3" name="orders_products">
+        <object-id>16513</object-id>
+        <state-number>814</state-number>
+      </table>
+      <table id="21" parent="3" name="products">
+        <object-id>16482</object-id>
+        <state-number>736</state-number>
+      </table>
+      <table id="22" parent="3" name="to_price">
+        <object-id>16464</object-id>
+        <state-number>719</state-number>
+      </table>
+      <table id="23" parent="3" name="users">
+        <object-id>16418</object-id>
+        <state-number>735</state-number>
+      </table>
+      <sequence id="24" parent="4" name="chefs_id_seq">
+        <object-id>16571</object-id>
+        <state-number>830</state-number>
+      </sequence>
+      <sequence id="25" parent="4" name="comments_id_seq">
+        <object-id>16590</object-id>
+        <state-number>838</state-number>
+      </sequence>
+      <sequence id="26" parent="4" name="ingredients_id_seq">
+        <object-id>16613</object-id>
+        <state-number>844</state-number>
+      </sequence>
+      <sequence id="27" parent="4" name="likes_id_seq">
+        <object-id>16582</object-id>
+        <state-number>833</state-number>
+      </sequence>
+      <sequence id="28" parent="4" name="recipe_ingredients_id_seq">
+        <object-id>16632</object-id>
+        <state-number>846</state-number>
+      </sequence>
+      <sequence id="29" parent="4" name="recipe_styles_id_seq">
+        <object-id>16624</object-id>
+        <state-number>845</state-number>
+      </sequence>
+      <sequence id="30" parent="4" name="recipes_id_seq">
+        <object-id>16560</object-id>
+        <state-number>829</state-number>
+      </sequence>
+      <sequence id="31" parent="4" name="styles_id_seq">
+        <object-id>16601</object-id>
+        <state-number>842</state-number>
+      </sequence>
+      <table id="32" parent="4" name="chefs">
+        <object-id>16573</object-id>
+        <state-number>849</state-number>
+      </table>
+      <table id="33" parent="4" name="comments">
+        <object-id>16592</object-id>
+        <state-number>838</state-number>
+      </table>
+      <table id="34" parent="4" name="ingredients">
+        <object-id>16615</object-id>
+        <state-number>844</state-number>
+      </table>
+      <table id="35" parent="4" name="likes">
+        <object-id>16584</object-id>
+        <state-number>833</state-number>
+      </table>
+      <table id="36" parent="4" name="recipe_ingredients">
+        <object-id>16634</object-id>
+        <state-number>846</state-number>
+      </table>
+      <table id="37" parent="4" name="recipe_styles">
+        <object-id>16626</object-id>
+        <state-number>845</state-number>
+      </table>
+      <table id="38" parent="4" name="recipes">
+        <object-id>16562</object-id>
+        <state-number>832</state-number>
+      </table>
+      <table id="39" parent="4" name="schema_migrations">
+        <object-id>16542</object-id>
+        <state-number>822</state-number>
+      </table>
+      <table id="40" parent="4" name="styles">
+        <object-id>16603</object-id>
+        <state-number>842</state-number>
+      </table>
+      <column id="41" parent="15" name="id">
+        <state-number>683</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;auto_brand_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="42" parent="15" name="name">
+        <state-number>667</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="43" parent="15" name="auto_brand_pkey">
+        <object-id>16434</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="44" parent="15" name="auto_brand_pkey">
+        <columns>id</columns>
+        <underlying-index>auto_brand_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="45" parent="16" name="id">
+        <state-number>684</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;auto_model_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="46" parent="16" name="auto_brand_id">
+        <state-number>670</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="47" parent="16" name="name">
+        <state-number>720</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="48" parent="16" name="auto_model_pkey">
+        <object-id>16436</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="49" parent="16" name="auto_model_pkey">
+        <columns>id</columns>
+        <underlying-index>auto_model_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="50" parent="16" name="auto_model_auto_brand_id_fkey">
+        <columns>auto_brand_id</columns>
+        <ref-key>~.auto_brand.auto_brand_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="51" parent="17" name="id">
+        <state-number>685</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;claim_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="52" parent="17" name="f_date">
+        <state-number>673</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="53" parent="17" name="users_id">
+        <state-number>673</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="54" parent="17" name="reason">
+        <state-number>673</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="55" parent="17" name="status">
+        <state-number>673</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="56" parent="17" name="response">
+        <state-number>673</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="57" parent="17" name="sum">
+        <state-number>707</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="58" parent="17" name="claim_pkey">
+        <object-id>16438</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="59" parent="17" name="claim_pkey">
+        <columns>id</columns>
+        <underlying-index>claim_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="60" parent="17" name="claim_users_id_fkey">
+        <columns>users_id</columns>
+        <ref-key>~.users.users_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="61" parent="18" name="id">
+        <state-number>686</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;information_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="62" parent="18" name="type">
+        <state-number>677</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="63" parent="18" name="name">
+        <state-number>677</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="64" parent="18" name="page_text">
+        <state-number>677</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="65" parent="18" name="url_image">
+        <state-number>677</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="66" parent="18" name="f_date">
+        <state-number>677</state-number>
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="67" parent="18" name="preview_text">
+        <state-number>677</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="68" parent="18" name="information_pkey">
+        <object-id>16440</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="69" parent="18" name="information_pkey">
+        <columns>id</columns>
+        <underlying-index>information_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="19" name="id">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;orders_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="71" parent="19" name="users_id">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="72" parent="19" name="status">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="73" parent="19" name="address">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="74" parent="19" name="f_date">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="75" parent="19" name="sum">
+        <state-number>735</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="76" parent="19" name="orders_pkey">
+        <object-id>16506</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="77" parent="19" name="orders_pkey">
+        <columns>id</columns>
+        <underlying-index>orders_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="78" parent="19" name="orders_users_id_fkey">
+        <columns>users_id</columns>
+        <ref-key>~.users.users_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="79" parent="20" name="orders_id">
+        <state-number>738</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="80" parent="20" name="products_id">
+        <state-number>736</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="81" parent="20" name="count">
+        <state-number>736</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="82" parent="20" name="id">
+        <state-number>814</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;orders_products_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <index id="83" parent="20" name="orders_products_orders_id_products_id_key">
+        <object-id>16539</object-id>
+        <columns>orders_id
+products_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="84" parent="20" name="orders_products_pkey">
+        <object-id>16535</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="85" parent="20" name="orders_products_pkey">
+        <columns>id</columns>
+        <underlying-index>orders_products_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="86" parent="20" name="orders_products_orders_id_products_id_key">
+        <columns>orders_id
+products_id</columns>
+        <underlying-index>orders_products_orders_id_products_id_key</underlying-index>
+      </key>
+      <foreign-key id="87" parent="20" name="orders_products_ordres_id_fkey">
+        <columns>orders_id</columns>
+        <ref-key>~.orders.orders_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="88" parent="20" name="orders_products_products_id_fkey">
+        <columns>products_id</columns>
+        <ref-key>~.products.products_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="89" parent="21" name="id">
+        <state-number>732</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;products_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="90" parent="21" name="model_id">
+        <state-number>732</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="91" parent="21" name="name">
+        <state-number>732</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="92" parent="21" name="description">
+        <state-number>732</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="93" parent="21" name="price">
+        <state-number>732</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="94" parent="21" name="products_pkey">
+        <object-id>16489</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="95" parent="21" name="products_pkey">
+        <columns>id</columns>
+        <underlying-index>products_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="96" parent="21" name="products_model_id_fkey">
+        <columns>model_id</columns>
+        <ref-key>~.auto_model.auto_model_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="97" parent="22" name="id">
+        <state-number>719</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;to_price_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="98" parent="22" name="price">
+        <state-number>721</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="99" parent="22" name="model_id">
+        <state-number>721</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="100" parent="22" name="to_price_pkey">
+        <object-id>16468</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="101" parent="22" name="to_price_pkey">
+        <columns>id</columns>
+        <underlying-index>to_price_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="102" parent="22" name="to_price_model_id_fkey">
+        <columns>model_id</columns>
+        <ref-key>~.auto_model.auto_model_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="103" parent="22" name="to_price_model_id_fkey1">
+        <columns>model_id</columns>
+        <ref-key>~.auto_model.auto_model_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="104" parent="23" name="id">
+        <state-number>687</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="105" parent="23" name="password">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="106" parent="23" name="email">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="107" parent="23" name="enabled">
+        <state-number>680</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <column id="108" parent="23" name="name">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="109" parent="23" name="lastname">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="110" parent="23" name="user_role">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="111" parent="23" name="second_name">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="112" parent="23" name="telephone">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="113" parent="23" name="automobile">
+        <state-number>680</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="114" parent="23" name="users_pkey">
+        <object-id>16442</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="115" parent="23" name="users_pkey">
+        <columns>id</columns>
+        <underlying-index>users_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="116" parent="32" name="id">
+        <state-number>830</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;chefs_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="117" parent="32" name="chefname">
+        <state-number>830</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="118" parent="32" name="email">
+        <state-number>830</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="119" parent="32" name="created_at">
+        <state-number>830</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="120" parent="32" name="updated_at">
+        <state-number>830</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="121" parent="32" name="password_digest">
+        <state-number>834</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="122" parent="32" name="admin">
+        <state-number>849</state-number>
+        <data-type>boolean</data-type>
+        <default-expression>false</default-expression>
+      </column>
+      <index id="123" parent="32" name="chefs_pkey">
+        <object-id>16580</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="124" parent="32" name="chefs_pkey">
+        <columns>id</columns>
+        <underlying-index>chefs_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="125" parent="33" name="id">
+        <state-number>838</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;comments_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="126" parent="33" name="description">
+        <state-number>854</state-number>
+        <data-type>text</data-type>
+      </column>
+      <column id="127" parent="33" name="chef_id">
+        <state-number>838</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="128" parent="33" name="recipe_id">
+        <state-number>838</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="129" parent="33" name="created_at">
+        <state-number>838</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="130" parent="33" name="updated_at">
+        <state-number>838</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="131" parent="33" name="comments_pkey">
+        <object-id>16599</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="132" parent="33" name="comments_pkey">
+        <columns>id</columns>
+        <underlying-index>comments_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="133" parent="34" name="id">
+        <state-number>844</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;ingredients_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="134" parent="34" name="name">
+        <state-number>844</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="135" parent="34" name="ingredients_pkey">
+        <object-id>16622</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="136" parent="34" name="ingredients_pkey">
+        <columns>id</columns>
+        <underlying-index>ingredients_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="137" parent="35" name="id">
+        <state-number>833</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;likes_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="138" parent="35" name="like">
+        <state-number>833</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <column id="139" parent="35" name="chef_id">
+        <state-number>833</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="140" parent="35" name="recipe_id">
+        <state-number>833</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="141" parent="35" name="created_at">
+        <state-number>833</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="142" parent="35" name="updated_at">
+        <state-number>833</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="143" parent="35" name="likes_pkey">
+        <object-id>16588</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="144" parent="35" name="likes_pkey">
+        <columns>id</columns>
+        <underlying-index>likes_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="145" parent="36" name="id">
+        <state-number>846</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;recipe_ingredients_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="146" parent="36" name="ingredient_id">
+        <state-number>846</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="147" parent="36" name="recipe_id">
+        <state-number>846</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="148" parent="36" name="recipe_ingredients_pkey">
+        <object-id>16638</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="149" parent="36" name="recipe_ingredients_pkey">
+        <columns>id</columns>
+        <underlying-index>recipe_ingredients_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="150" parent="37" name="id">
+        <state-number>845</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;recipe_styles_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="151" parent="37" name="style_id">
+        <state-number>845</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="152" parent="37" name="recipe_id">
+        <state-number>845</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <index id="153" parent="37" name="recipe_styles_pkey">
+        <object-id>16630</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="154" parent="37" name="recipe_styles_pkey">
+        <columns>id</columns>
+        <underlying-index>recipe_styles_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="155" parent="38" name="id">
+        <state-number>829</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;recipes_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="156" parent="38" name="name">
+        <state-number>829</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="157" parent="38" name="summary">
+        <state-number>829</state-number>
+        <data-type>text</data-type>
+      </column>
+      <column id="158" parent="38" name="description">
+        <state-number>829</state-number>
+        <data-type>text</data-type>
+      </column>
+      <column id="159" parent="38" name="created_at">
+        <state-number>829</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="160" parent="38" name="updated_at">
+        <state-number>829</state-number>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="161" parent="38" name="chef_id">
+        <state-number>831</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="162" parent="38" name="picture">
+        <state-number>832</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="163" parent="38" name="recipes_pkey">
+        <object-id>16569</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="164" parent="38" name="recipes_pkey">
+        <columns>id</columns>
+        <underlying-index>recipes_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="165" parent="39" name="version">
+        <state-number>822</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="166" parent="39" name="unique_schema_migrations">
+        <object-id>16548</object-id>
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <column id="167" parent="40" name="id">
+        <state-number>842</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;styles_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="168" parent="40" name="name">
+        <state-number>842</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="169" parent="40" name="styles_pkey">
+        <object-id>16610</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="170" parent="40" name="styles_pkey">
+        <columns>id</columns>
+        <underlying-index>styles_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

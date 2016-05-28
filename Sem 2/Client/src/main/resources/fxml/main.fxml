@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="913.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <TabPane id="pane" fx:id="tabs" layoutX="1.0" layoutY="1.0" onMouseClicked="#tab_click" prefHeight="655.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Запись на ТО">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="909.0">
+                            <children>
+                                <Button fx:id="send" layoutX="297.0" layoutY="444.0" mnemonicParsing="false" onAction="#sendClaim" text="Отправить заявку" />
+                                <Label layoutX="200.0" layoutY="86.0" text="Заявка от: ">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="203.0" layoutY="149.0" text="Телефон: ">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="111.0" layoutY="196.0" text="Марка и модель авто: ">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="103.0" layoutY="245.0" text="Причина обращения:">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="89.0" layoutY="400.0" text="Желаемая дата и время:">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <DatePicker id="time" fx:id="time" layoutX="283.0" layoutY="395.0" prefHeight="28.0" prefWidth="198.0" />
+                                <TextArea id="text" fx:id="text" layoutX="283.0" layoutY="245.0" prefHeight="136.0" prefWidth="314.0" />
+                                <TextField id="auto" fx:id="auot" disable="true" layoutX="283.0" layoutY="191.0" prefHeight="26.0" prefWidth="313.0" />
+                                <TextField id="telephone" fx:id="telephone" disable="true" layoutX="283.0" layoutY="144.0" prefHeight="26.0" prefWidth="311.0" />
+                                <TextField id="name" fx:id="name" disable="true" layoutX="283.0" layoutY="81.0" prefHeight="26.0" prefWidth="311.0" />
+                                <Separator layoutX="14.0" layoutY="180.0" prefHeight="4.0" prefWidth="902.0" />
+                                <Label fx:id="ok" layoutX="364.0" layoutY="39.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Настройки профиля">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="513.0" prefWidth="909.0">
+                            <children>
+                                <Label layoutX="205.0" layoutY="50.0" text="Фамилия:*" />
+                                <Label layoutX="205.0" layoutY="97.0" text="Имя:*" />
+                                <Label layoutX="205.0" layoutY="137.0" text="Отчество:" />
+                                <Label layoutX="205.0" layoutY="181.0" text="Телефон:" />
+                                <Label layoutX="205.0" layoutY="232.0" text="Ваше авто:" />
+                                <Label layoutX="205.0" layoutY="271.0" text="Эл.почта:" />
+                                <Label layoutX="163.0" layoutY="326.0" text="Старый пароль:" />
+                                <Label layoutX="167.0" layoutY="374.0" text="Новый пароль:" />
+                                <Label layoutX="159.0" layoutY="416.0" text="Подтверждение:" />
+                                <TextField fx:id="ed_lastname" layoutX="284.0" layoutY="45.0" prefHeight="26.0" prefWidth="232.0" />
+                                <TextField fx:id="ed_name" layoutX="284.0" layoutY="92.0" prefHeight="26.0" prefWidth="231.0" />
+                                <TextField fx:id="ed_second_name" layoutX="284.0" layoutY="132.0" prefHeight="26.0" prefWidth="230.0" />
+                                <TextField fx:id="ed_telephone" layoutX="284.0" layoutY="176.0" prefHeight="26.0" prefWidth="230.0" />
+                                <TextField fx:id="ed_auto" layoutX="284.0" layoutY="227.0" prefHeight="26.0" prefWidth="231.0" />
+                                <TextField fx:id="ed_email" disable="true" layoutX="284.0" layoutY="266.0" prefHeight="26.0" prefWidth="232.0" />
+                                <PasswordField fx:id="ed_old" layoutX="284.0" layoutY="321.0" prefHeight="26.0" prefWidth="234.0" />
+                                <PasswordField fx:id="ed_new" layoutX="284.0" layoutY="369.0" prefHeight="26.0" prefWidth="239.0" />
+                                <PasswordField fx:id="ed_new_p" layoutX="283.0" layoutY="411.0" prefHeight="26.0" prefWidth="240.0" />
+                                <Separator layoutX="-22.0" layoutY="304.0" prefHeight="1.0" prefWidth="974.0" />
+                                <Separator layoutX="-29.0" layoutY="455.0" prefHeight="0.0" prefWidth="959.0" />
+                                <Label layoutX="229.0" layoutY="457.0" text="* — поля, обязательные для заполнения" />
+                                <Button fx:id="ed_go" layoutX="284.0" layoutY="480.0" mnemonicParsing="false" onAction="#setUser" text="Сохранить изменения" />
+                                <Label fx:id="success" layoutX="351.0" layoutY="14.0" text="Label" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Информация">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                            <children>
+                                <SplitPane dividerPositions="0.9955604883462819" prefHeight="548.0" prefWidth="903.0" style="-fx-background-color: transparent;">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+                                            <children>
+                                                <ListView fx:id="listview" onMouseClicked="#handleMouseClick" prefHeight="549.0" prefWidth="173.0" style="fx-background-color: transparent;" />
+                                                <ListView fx:id="news" layoutX="178.0" onMouseClicked="#newsClick" prefHeight="538.0" prefWidth="719.0" style="-fx-background-color: transparent;" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="546.0" prefWidth="716.0" />
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Контактная информация">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="/css/new.css">
+                            <children>
+                                <TextArea fx:id="info" layoutX="23.0" layoutY="26.0" prefHeight="324.0" prefWidth="622.0" style="-fx-background-color: transparent; -fx-text-fill: white" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="История обслуживания">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="table" layoutX="5.0" layoutY="14.0" prefHeight="200.0" prefWidth="876.0">
+                                    <columns>
+                                        <TableColumn fx:id="id" prefWidth="50.0" style="-fx-text-fill: black" text="№" />
+                                        <TableColumn fx:id="vid" prefWidth="222.0" style="-fx-text-fill: black" text="Вид ремонта" />
+                                        <TableColumn fx:id="status" prefWidth="242.0" style="-fx-text-fill: black" text="Статус" />
+                                        <TableColumn fx:id="data" maxWidth="306.0" minWidth="0.0" prefWidth="110.0" resizable="false" style="-fx-text-fill: black" text="Дата" />
+                                        <TableColumn fx:id="response" prefWidth="170.0" style="-fx-text-fill: black" text=" Ответ" />
+                                        <TableColumn fx:id="sum" minWidth="0.0" prefWidth="77.0" style="-fx-text-fill: black" text="≈ цена" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

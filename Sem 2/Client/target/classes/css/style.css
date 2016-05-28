@@ -1,0 +1,74 @@
+#pane{
+    -fx-background-image: url('/images/Ferrari250SWB-2FadeBG.jpg');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 600;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, white, 30, 0.8, 0, 0);
+}
+
+
+.label{
+    -fx-effect: dropshadow(three-pass-box, white, 30, 0.75, 0, 0);
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+.button{
+    -fx-effect: dropshadow(three-pass-box, white, 30, 0.3, 0, 0);
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#c9de96 0%, #8ab66b 25%, #398235 75%, #398235 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+.list-cell:odd {
+    -fx-text-fill: white;
+     -fx-cell-hover-color: #0093ff;
+    -fx-background-color: transparent;
+ }
+
+.list-cell:filled:hover {
+    -fx-background-color: #96b946;
+    -fx-text-fill: white;
+}
+
+.tab-pane
+{
+    -fx-background-color: black;
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-color: black;
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #96b946;
+}
+.button{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+}
+
+
